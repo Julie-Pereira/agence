@@ -1,0 +1,82 @@
+<!-- formulaire pour modifier un client -->
+<h4 class="mb-5">Modifier le Profil de {{client.name}}</h4>
+<form *ngIf="client">
+
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="name" [value]="client.name" (change)="formUpdate.name = $event.target.value">
+          </div>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>secteur</label>
+            <input type="text" class="form-control" placeholder="secteur" [value]="client.secteur" (change)="formUpdate.secteur = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <div class="row" >
+        <div class="col">
+            <div class="form-group">
+            <label>Rue</label>
+            <input type="text" class="form-control" placeholder="street" [value]="client.adress.street" (change)="formUpdate.adress.street = $event.target.value">
+            </div>
+        </div>
+    
+  
+        <div class="col">
+            <div class="form-group">
+            <label>Ville</label>
+            <input type="text" class="form-control" placeholder="city" [value]="client.adress.city" (change)="formUpdate.adress.city = $event.target.value">
+            </div>
+        </div>
+    
+        <div class="col">
+            <div class="form-group">
+            <label>Code Postal</label>
+            <input type="text" class="form-control" placeholder="zipcode" [value]="client.adress.zipcode" (change)="formUpdate.adress.zipcode = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="name2" [value]="client.contact.name2" (change)="formUpdate.contact.name2 = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" class="form-control" placeholder="prenom" [value]="client.contact.prenom" (change)="formUpdate.contact.prenom = $event.target.value">
+            </div>
+         </div>
+   
+  
+        <div class="col">
+            <div class="form-group">
+            <label>Télèphone</label>
+            <input type="text" class="form-control" placeholder="phone" [value]="client.contact.phone" (change)="formUpdate.contact.phone = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>mail</label>
+            <input type="text" class="form-control" placeholder="mail" [value]="client.contact.mail" (change)="formUpdate.contact.mail = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <!-- Validation de la modification d'un client -->
+    <button type="button" name="button" class="btn btn-success" (click)=updateclientClient(client.id) >Modifier Client</button>
+    <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+     
+</form>

@@ -1,0 +1,75 @@
+<!-- formulaire de création d'un client -->
+<h4 class="mb-5">Création d'un client</h4>
+
+<form>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Nom de l'entreprise</label>
+                <input type="text" class="form-control" placeholder="Nom" [value]="formCreate.name" (change)="formCreate.name = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Secteur</label>
+                <input type="text" class="form-control" placeholder="secteur" [value]=" formCreate.secteur" (change)="formCreate.secteur = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Rue</label>
+                <input type="text" class="form-control" placeholder="street" [value]="formCreate.adress.street" (change)="formCreate.adress.street = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+              <label>Ville</label>
+              <input type="text" class="form-control" placeholder="city" [value]="formCreate.adress.city" (change)="formCreate.adress.city = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Code Postal</label>
+                <input type="text" class="form-control" placeholder="zipcode" [value]="formCreate.adress.zipcode" (change)="formCreate.adress.zipcode = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Nom</label>
+                <input type="text" class="form-control" placeholder="name2" [value]="formCreate.contact.name2" (change)="formCreate.contact.name2 = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Prenom</label>
+                <input type="text" class="form-control" placeholder="prenom" [value]="formCreate.contact.prenom" (change)="formCreate.contact.prenom = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+                <div class="form-group">
+                    <label>Téléphone</label>
+                    <input type="text" class="form-control" placeholder="phone" [value]="formCreate.contact.phone" (change)="formCreate.contact.phone = $event.target.value">
+                </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Mail</label>
+                <input type="text" class="form-control" placeholder="mail" [value]="formCreate.contact.mail" (change)="formCreate.contact.mail = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <!-- validation d'un client et retour page précédente-->
+    <button type="button" name="button" class="btn btn-success" (click)=createClient()>Ajouter</button>
+    <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+  
+</form>
+  

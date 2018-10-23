@@ -1,0 +1,75 @@
+<!-- formulaire pour modifier un projet -->
+<h4 class="mb-5">Modifier le Profil du projet {{projet.name}}</h4>
+<form *ngIf="projet">
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="name" [value]="projet.name" (change)="formUpdate.name = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" placeholder="description" [value]="projet.description" (change)="formUpdate.description = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>datedebut</label>
+            <input type="text" class="form-control" placeholder="datedebut" [value]="projet.datedebut" (change)="formUpdate.datedebut = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>datefin</label>
+            <input type="text" class="form-control" placeholder="datefin" [value]="projet.datefin" (change)="formUpdate.datefin = $event.target.value">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Client</label>
+            <input type="text" class="form-control" placeholder="client" [value]="projet.client" (change)="formUpdate.client = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row"></div>
+        <div class="col">
+            <div class="form-group">
+            <label>Salaries</label>
+            <input type="text" class="form-control" placeholder="salariés" [value]="projet.salaries" (change)="formUpdate.salaries = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Montant</label>
+            <input type="text" class="form-control" placeholder= "montant" [value]="projet.montant" (change)="formUpdate.montant = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>Statut</label>
+            <input type="text" class="form-control" placeholder="statut" [value]="projet.statut" (change)="formUpdate.statut = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+  <button type="button" name="button" class="btn btn-success" (click)=updateProjet(projet.id) >Modifier Projet</button>
+  <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+   
+</form>

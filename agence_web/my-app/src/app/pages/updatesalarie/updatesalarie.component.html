@@ -1,0 +1,93 @@
+<!-- formulaire pour modifier un salarié -->
+
+<h4 class="mb-5">Modifier le Profil de {{salarie.name}}</h4>
+<form *ngIf="salarie">
+
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="name" [value]="salarie.name" (change)="formUpdate.name = $event.target.value">
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col">
+                <div class="form-group">
+                <label>Prenom</label>
+                <input type="text" class="form-control" placeholder="prenom" [value]="salarie.prenom" (change)="formUpdate.prenom = $event.target.value">
+                </div>
+            </div>
+    </div>
+  
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>username</label>
+            <input type="text" class="form-control" placeholder="username" [value]="salarie.username" (change)="formUpdate.username = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+        <label>Date d'anniversaire</label>
+        <input type="text" class="form-control" placeholder="birthday" [value]="salarie.birthday" (change)="formUpdate.birthday = $event.target.value">
+        </div>
+      </div>
+    </div>
+  
+    <div class="row" >
+        <div class="col">
+            <div class="form-group">
+            <label>Rue</label>
+            <input type="text" class="form-control" placeholder="street" [value]="salarie.adress.street" (change)="formUpdate.street = $event.target.value">
+            </div>
+        </div>
+    
+  
+        <div class="col">
+            <div class="form-group">
+            <label>Ville</label>
+            <input type="text" class="form-control" placeholder="city" [value]="salarie.adress.city" (change)="formUpdate.city = $event.target.value">
+            </div>
+        </div>
+    
+        <div class="col">
+            <div class="form-group">
+            <label>Code Postal</label>
+            <input type="text" class="form-control" placeholder="zipcode" [value]="salarie.adress.zipcode" (change)="formUpdate.zipcode = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <div class="row"> 
+        <div class="col">
+            <div class="form-group">
+            <label>Télèphone</label>
+            <input type="text" class="form-control" placeholder="tel" [value]="salarie.tel" (change)="formUpdate.tel = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>mail</label>
+            <input type="text" class="form-control" placeholder="mail" [value]="salarie.mail" (change)="formUpdate.mail = $event.target.value">
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group">
+            <label>Poste</label>
+            <input type="text" class="form-control" placeholder="poste" [value]="salarie.poste" (change)="formUpdate.poste = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <!-- Validation de la modification d'un salarie -->
+    <button type="button" name="button" class="btn btn-success" (click)=updatesalarieSalarie(salarie.id) >Modifier Salarie</button>
+    <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+     
+</form>

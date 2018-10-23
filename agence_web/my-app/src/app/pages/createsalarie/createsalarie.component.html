@@ -1,0 +1,85 @@
+<!-- formulaire de création d'un salarié -->
+
+<h4 class="mb-5">Création d'un salarié</h4>
+<form>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Nom</label>
+            <input type="text" class="form-control" placeholder="nom" [value]="formCreate.name" (change)="formCreate.name = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Prénom</label>
+            <input type="text" class="form-control" placeholder="prenom" [value]="formCreate.prenom" (change)="formCreate.prenom = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Nom d'utilisateur</label>
+            <input type="text" class="form-control" placeholder="username" [value]=" formCreate.username" (change)="formCreate.username = $event.target.value">
+          </div>
+        </div>
+    </div>
+  
+  
+    <div class="row">
+      <div class="col">
+          <div class="form-group">
+            <label>Date d'anniversaire</label>
+            <input type="text" class="form-control" placeholder="birthday" [value]="formCreate.birthday" (change)="formCreate.birthday = $event.target.value">
+          </div>
+      </div>
+    </div>
+  
+    <!--Création d'une adresse composée-->
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Rue</label>
+            <input type="text" class="form-control" placeholder="street" [value]="formCreate.adress.street" (change)="formCreate.adress.street = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Ville</label>
+            <input type="text" class="form-control" placeholder="city" [value]="formCreate.adress.city" (change)="formCreate.adress.city = $event.target.value">
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label>Code Postal</label>
+            <input type="text" class="form-control" placeholder="zipcode" [value]="formCreate.adress.zipcode" (change)="formCreate.adress.zipcode = $event.target.value">
+          </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Téléphone</label>
+            <input type="text" class="form-control" placeholder="tel" [value]="formCreate.tel" (change)="formCreate.tel = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="mail" [value]="formCreate.mail" (change)="formCreate.mail = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Poste</label>
+            <input type="text" class="form-control" placeholder="poste" [value]="formCreate.poste" (change)="formCreate.poste = $event.target.value">
+            </div>
+        </div>
+    </div>
+  
+    <!-- validation d'un client et retour page précédente-->
+    <button type="button" name="button" class="btn btn-success" (click)=createSalarie()>Ajouter</button>
+    <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+  
+</form>
+  

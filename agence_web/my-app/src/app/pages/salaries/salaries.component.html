@@ -1,0 +1,41 @@
+<h1>Liste des Salariès</h1>
+
+<div class="counter" *ngIf="salaries">
+  
+  <!--route pour créer les salariés-->
+  <a routerLink='/createsalarie' class="btn btn-success">Création Salariès </a>
+  
+  <table class="table">
+  
+    <tr>
+      <td>id</td>
+      <td>Nom</td>
+      <td>Prénom</td>
+      <td>Nom d'utilisateur</td>
+      <td>Téléphone</td>
+      <td>Mail</td>
+      <td>Poste</td>
+    </tr>
+  
+    <tbody>
+      <tr *ngFor="let salarie of salaries">
+          <td>{{salarie._id}}</td>
+          <td>{{salarie.name}}</td>
+          <td>{{salarie.prenom}}</td>
+          <td>{{salarie.username}}</td>
+          <td>{{salarie.tel}}</td>
+          <td>{{salarie.mail}}</td>
+          <td>{{salarie.poste}}</td>
+  
+          <!--route pour les pages voir et modifier + lien pour supprimer un salrie-->
+          <td>
+            <a routerLink="/salarie/{{salarie._id}}" class="btn btn-primary">Voir Salaries</a>
+            <a routerLink="/updatesalarie/{{salarie._id}}" class="btn btn-secondary">Modifier Salariés</a>
+            <button type="button" class="btn btn-warning"(click)="deleteSalarie(salarie._id)"><i class="fas fa-trash-alt"></i></button>
+          </td>
+      </tr>
+    </tbody>
+  
+  </table>
+
+</div>

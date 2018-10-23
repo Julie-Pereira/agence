@@ -1,0 +1,78 @@
+<!-- formulaire de création d'un projet -->
+<h4 class="mb-5">Création d'un projet</h4>
+
+<form>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+              <label>Nom</label>
+              <input type="text" class="form-control" placeholder="Nom" [value]="formCreate.name" (change)="formCreate.name = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Statut</label>
+                <!-- liste déroulante pour le statut-->
+                <select class="form-control">
+                <option value="annulé">annulé</option>
+                <option value="terminé">terminé</option>
+                <option value="en cours de réalisation">en cours de réalisation</option>
+                <option value="prospect">prospect</option>
+                <input type="text" class="form-control" placeholder="statut" [value]="form-control" (change)="formCreate.statut = $event.target.value">
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" placeholder="description" [value]="formCreate.description" (change)="formCreate.description = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+             <div class="form-group">
+              <label>Date debut</label>
+              <input type="text" class="form-control" placeholder="datedebut" [value]="formCreate.datedebut" (change)="formCreate.datedebut = $event.target.value">
+             </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Date fin</label>
+            <input type="text" class="form-control" placeholder="datefin" [value]="formCreate.datefin" (change)="formCreate.datefin = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Montant</label>
+            <input type="text" class="form-control" placeholder="montant" [value]="formCreate.montant" (change)="formCreate.montant = $event.target.value">
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <label>Client</label>
+            <input type="text" class="form-control" placeholder="client" [value]="formCreate.client" (change)="formCreate.client = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+            <label>Salariès</label>
+            <input type="text" class="form-control" placeholder="salaries" [value]="formCreate.salaries" (change)="formCreate.salaries = $event.target.value">
+             </div>
+        </div>
+    </div>
+
+    <!-- validation de la création d'un projet et retour page précédente -->
+    <button type="button" name="button" class="btn btn-success" (click)=createProjet()>Ajouter</button>
+    <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+
+</form>

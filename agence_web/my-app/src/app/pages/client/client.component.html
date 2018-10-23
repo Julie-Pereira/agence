@@ -1,0 +1,55 @@
+<h4 class="mb-5">Profil de {{client.name}}</h4>
+
+  <div class="row">
+    <div class="client-details" *ngIf="client">
+
+        <div class="col-xs-12 col-md-40">
+            <strong>Nom de l'entreprise :</strong>
+        </div>
+        <div>
+            {{client.name}}
+        </div>
+
+        <div class="col-xs-12 col-md-40">
+            <strong>Adresse :</strong>
+        </div>
+        <div><td>
+            {{client.adress.street}}
+            {{client.adress.city}}
+            {{client.adress.zipcode}}
+            </td>
+        </div>
+         
+        <div class="col-xs-12 col-md-40">
+            <strong>Contact :</strong>
+        </div>
+        <div><td>
+            <a>Nom : </a>
+            {{client.contact.name2}}
+            <a>Prenom : </a>
+            {{client.contact.prenom}}
+            <a>Téléphone : </a>
+            {{client.contact.phone}}
+            <a>Mail : </a>
+            {{client.contact.mail}}
+            </td>
+        </div>
+            
+        <div class="col-xs-12 col-md-40">
+            <strong>Secteur :</strong>
+        </div>
+        <div>
+            {{client.secteur}}
+        </div>
+
+        <div>
+            <td>
+            <a routerLink="/updateclient/{{client._id}}" class="btn btn-secondary">Modifier Client</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteClient(client._id)">Supprimer</button>
+            <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+            </td>
+        </div>
+   
+    </div>
+</div>
+

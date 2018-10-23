@@ -1,0 +1,33 @@
+<!-- page de tous les projets -->
+<h1>Liste des Projets</h1>
+
+<a routerLink='/create' class="btn btn-success"><i class="fas fa-plus-square"></i></a>
+
+<table class="table">
+    <tr>
+        <td>id</td>
+        <td>Nom</td>
+        <td>Description</td>
+        <td>Client</td>
+        <td>Statut</td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let projet of projets">
+            <td>{{projet._id}}</td>
+            <td>{{projet.name}}</td>
+            <td>{{projet.description}}</td>
+            <td>{{projet.client}}</td>
+            <td>{{projet.statut}}</td>
+
+            <!-- route pour voir, modifier et supprimer un projet -->
+            <td>
+                <a routerLink="/projet/{{projet._id}}" class="btn btn-primary">Voir projet</a>
+                <a routerLink="/update/{{projet._id}}" class="btn btn-secondary">Modifier projet</a>
+                <button type="button" class="btn btn-warning"(click)="deleteProjet(projet._id)"><i class="fas fa-trash-alt"></i></button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+

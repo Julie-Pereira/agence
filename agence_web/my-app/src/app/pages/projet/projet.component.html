@@ -1,0 +1,72 @@
+
+<div class="projet-details" *ngIf="projet">
+
+    <h4 class="mb-5">Profil de {{projet.name}}</h4>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Name</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.name}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>description</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.description}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Date de début</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.datedebut}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Date de fin</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.datefin}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Client</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.client}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Salariès</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.salaries}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Montant</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.montant}}
+        </div>
+
+        <div class="col-xs-12 col-md-2">
+            <strong>Statut</strong>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            {{projet.statut}}
+        </div>
+
+    </div>
+        
+    <div class="mt-5">
+        <a routerLink="/update/{{projet._id}}" class="btn btn-primary">Modifier ce projet</a>
+        <button type="button" name="button" class="btn btn-warning" (click)="deleteProjet(projet.id)">Supprimer ce projet</button>
+        <button type="button" name="button" class="btn btn-info"  onclick = "history.back()" >Retour</button>
+    </div>
+
+</div>

@@ -1,0 +1,45 @@
+<!--page de tous les clients-->
+<h1>Liste des Clients</h1>
+
+<div class="counter" *ngIf="clients">
+
+</div>
+
+<!--route pour créer les clients-->
+<a routerLink='/createclient' class="btn btn-success"><i class="fas fa-plus-square"></i> </a>
+
+<table class="table">
+
+  <tr>
+    <td>id</td>
+    <td>Nom de l'entreprise</td>
+    <td>Adresse</td>
+    <td>Contact</td>
+    <td>Secteur d'activité</td>
+  </tr>
+
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client._id}}</td>
+      <td>{{client.name}}</td>
+      <td>
+        {{client.adress.street}}
+        {{client.adress.city}}
+        {{client.adress.zipcode}}
+      </td>
+      <td>
+        {{client.contact.name2}}
+      </td>
+      <td>{{client.secteur}}</td>
+
+      <!--route pour les pages voir et modifier + lien pour supprimer un client-->
+      <td>
+        <a routerLink="/client/{{client._id}}" class="btn btn-primary">Voir Client</a>
+        <a routerLink="/updateclient/{{client._id}}" class="btn btn-secondary">Modifier Client</a>
+        <button type="button" class="btn btn-warning"(click)="deleteClient(client._id);alert"><i class="fas fa-trash-alt"></i></button>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+
